@@ -34,6 +34,21 @@ function App() {
       .catch((error) => console.log("error", error));
   } 
 
+  function getAll() {
+    var requestOptions = {
+      method: "GET",
+    };
+    //var url = "http://localhost:3000/customer/all";
+    var url = "https://jacphua-app.herokuapp.com/all";
+    
+    console.log(url);
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((responseJSON) => { setResult(responseJSON)})
+      .catch((error) => console.log("error", error));
+  } 
+
+
   /* const alertCustId = () => {
     alert(custId);
   }; */
